@@ -18,6 +18,9 @@ Each image in the dataset was processed to create corresponding masks, which are
 ## Model Architecture
 I employed the `segmentation_models` library and chose U-Net as the primary architecture for this task. U-Net is renowned for its effectiveness in image segmentation problems, particularly in biomedical image segmentation.
 
+## Metrics and Loss Function
+For this project, I used the Dice Coefficient and Intersection over Union (IoU) as metrics, and Dice Loss as the loss function. Dice Loss was chosen as it is directly related to the Dice Coefficient, helping to optimize the model for better overlap between predicted and actual segmentation masks.
+
 ## Hyperparameter Tuning
 The model's performance was fine-tuned by adjusting the learning rate and batch size. After experimentation, the optimal hyperparameters were identified as:
 - **Learning Rate (LR):** 4e-5
@@ -30,4 +33,4 @@ The model was initially trained for 20 epochs. Towards the end of this training 
 - **Best Validation Result:** F1-score: 0.8785
 - **Evaluation Result:** Mean F1-score: 0.87307
 
-The training and evaluation results indicate the model's capability to effectively identify ships in satellite imagery. The use of data balancing, careful hyperparameter tuning, and image augmentation were key to enhancing the model's performance.
+The training and evaluation results indicate the model's capability to effectively identify ships in satellite imagery. The use of data balancing, careful hyperparameter tuning, image augmentation, and appropriate choice of metrics and loss function were key to enhancing the model's performance.
